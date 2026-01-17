@@ -1,9 +1,9 @@
-CREATE TABLE users (
+CREATE TABLE restaurants (
     id BIGSERIAL PRIMARY KEY,
-    name VARCHAR(255),
-    email VARCHAR(255),
+    name VARCHAR(255) NOT NULL,
+    address TEXT,
     phone_number VARCHAR(30),
-    role VARCHAR(20) DEFAULT 'client',
+    status BOOLEAN NOT NULL DEFAULT true,
     created_at TIMESTAMP NOT NULL DEFAULT now(),
     updated_at TIMESTAMP NOT NULL DEFAULT now()
 );
