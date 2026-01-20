@@ -23,4 +23,6 @@ func main() {
 	print("Database connected successfully")
 
 	// Initialize router
+
+	// 2. sqlc
 }
