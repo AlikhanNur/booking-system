@@ -34,3 +34,27 @@ func mapDBUserToModel(u *db.User) *models.User {
 		UpdatedAt:   u.UpdatedAt,
 	}
 }
+
+func mapDBRestaurantToModel(res *db.Restaurant) *models.Restaurant {
+	return &models.Restaurant{
+		ID:          res.ID,
+		Name:        res.Name,
+		Status:      res.Status,
+		Address:     fromNullString(res.Address),
+		PhoneNumber: fromNullString(res.PhoneNumber),
+		CreatedAt:   res.CreatedAt,
+		UpdatedAt:   res.UpdatedAt,
+	}
+}
+
+func mapDBTableToModel(table *db.Table) *models.Table {
+	return &models.Table{
+		ID:           table.ID,
+		RestaurantID: table.RestaurantID,
+		TableNumber:  table.TableNumber,
+		Seats:        int64(table.Seats),
+		Status:       table.Status,
+		CreatedAt:    table.CreatedAt,
+		UpdatedAt:    table.UpdatedAt,
+	}
+}

@@ -10,14 +10,24 @@ import (
 
 type Querier interface {
 	CreateBooking(ctx context.Context, arg CreateBookingParams) (Booking, error)
+	CreateRestaurant(ctx context.Context, arg CreateRestaurantParams) (Restaurant, error)
+	CreateTable(ctx context.Context, arg CreateTableParams) (Table, error)
 	CreateUser(ctx context.Context, arg CreateUserParams) (User, error)
 	DeleteBooking(ctx context.Context, id int64) error
+	DeleteRestaurnat(ctx context.Context, id int64) error
+	DeleteTable(ctx context.Context, id int64) error
 	DeleteUser(ctx context.Context, id int64) error
 	GetAllBookings(ctx context.Context) ([]Booking, error)
+	GetAllRestaurnats(ctx context.Context) ([]Restaurant, error)
+	GetAllTables(ctx context.Context) ([]Table, error)
 	GetAllUsers(ctx context.Context) ([]User, error)
 	GetBookingByID(ctx context.Context, id int64) (Booking, error)
+	GetRestaurnatByID(ctx context.Context, id int64) (Restaurant, error)
+	GetTableByID(ctx context.Context, id int64) (Table, error)
 	GetUserByID(ctx context.Context, id int64) (User, error)
 	UpdateBooking(ctx context.Context, arg UpdateBookingParams) (Booking, error)
+	UpdateRestaurnat(ctx context.Context, arg UpdateRestaurnatParams) (Restaurant, error)
+	UpdateTable(ctx context.Context, arg UpdateTableParams) (Table, error)
 	UpdateUser(ctx context.Context, arg UpdateUserParams) (User, error)
 }
 
